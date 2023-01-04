@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder';
@@ -9,6 +9,7 @@ const UpdateRestaurant = (props) => {
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [priceRange, setPriceRange] = useState("Price Range");
+    const { restaurants, setRestaurants } = useContext(RestaurantsContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,7 +20,7 @@ const UpdateRestaurant = (props) => {
             setPriceRange(response.data.data.restaurant.price_range);
         };
         fetchData();
-    }, []);
+    }, [restaurants]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
