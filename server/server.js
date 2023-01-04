@@ -47,7 +47,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
         const restaurant = await db.query(
             `select * from restaurants left join (select restaurant_id, 
             COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews 
-            group by restaurant_id) reviews on id = 
+            group by restaurant_id) reviews on restaurant_id = 
             reviews.restaurant_id where id = $1;`, 
             [req.params.id]
         );
