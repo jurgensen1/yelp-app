@@ -20,7 +20,7 @@ const RestaurantList = () => {
 
     useEffect(() => {
         fetchData();
-    }, [restaurants]);
+    }, []);
 
     const handleDelete = async (e, id) => {
         e.stopPropagation();
