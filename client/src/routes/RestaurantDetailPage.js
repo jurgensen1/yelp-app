@@ -26,8 +26,8 @@ const RestaurantDetailPage = (props) => {
         <div>{selectedRestaurant && (
             <>
                 <h1 className='text-center display-1'>
-                    {selectedRestaurant.restaurant.name}
                 </h1>
+                    {selectedRestaurant.restaurant.name}
                 <div className='text-center'>
                     <StarRating rating={selectedRestaurant.restaurant.average_rating}/>
                     <span>

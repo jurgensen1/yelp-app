@@ -40,7 +40,7 @@ const AddReview = () => {
             }
         };
         fetchData();
-    }, [selectedRestaurant]);
+    }, [handleSubmitReview]);
 
     return (
         <div className='mb-2'>
