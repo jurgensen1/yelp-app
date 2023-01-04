@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "http://localhost:3001/api/v1/restaurants";
+const baseURL = "http://mindlark.org/api/v1/restaurants";
 
 export default axios.create({
     baseURL,
