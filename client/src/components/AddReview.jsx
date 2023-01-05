@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import RestaurantFinder from '../apis/RestaurantFinder';
 import { RestaurantsContext } from '../App';
 
@@ -13,7 +13,7 @@ const AddReview = () => {
     const [rating, setRating] = useState('Rating');
     const [reviewText, setReviewText] = useState('');
     
-    const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
+    const { setSelectedRestaurant } = useContext(RestaurantsContext);
     
 
     const handleSubmitReview = async (e) => {
@@ -40,7 +40,7 @@ const AddReview = () => {
             }
         };
         fetchData();
-    }, [handleSubmitReview]);
+    }, [handleSubmitReview, id, setSelectedRestaurant]);
 
     return (
         <div className='mb-2'>
