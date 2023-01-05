@@ -22,7 +22,7 @@ const RestaurantDetailPage = () => {
             }
         };
         fetchData();
-    }, [id, setSelectedRestaurant]);
+    }, []);
     return (
         <div>{selectedRestaurant && (
             <>
