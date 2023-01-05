@@ -32,7 +32,7 @@ res.status(200).json({
 
 // Get a Restaurant
 app.get("/api/v1/restaurants/:id", async (req, res) => {
-    console.log(req.params.id);
+    console.log("req.params.id: " + req.params.id);
 
     try {
         const restaurant = await db.query(
