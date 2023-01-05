@@ -31,7 +31,7 @@ res.status(200).json({
 });
 
 // Get a Restaurant
-app.get("/restaurants/api/v1/restaurants/:id", async (req, res) => {
+app.get("/api/v1/restaurants/:id", async (req, res) => {
     console.log(req.params.id);
 
     try {
