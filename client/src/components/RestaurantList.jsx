@@ -35,11 +35,11 @@ const RestaurantList = () => {
     };
     const handleUpdate = (e, id) => {
         e.stopPropagation();
-        navigate(`/restaurants/${id}/update`)
+        navigate(`/restaurants/${id}/update`);
     };
 
     const handleRestaurantSelect = (id) => {
-        navigate(`/restaurants/${id}`)
+        navigate(`/restaurants/${id}`);
     };
 
     const renderRating = (restaurant) => {
