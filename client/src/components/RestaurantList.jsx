@@ -20,7 +20,8 @@ const RestaurantList = () => {
                 console.log(err);
             }
         };
-    }, []);
+        fetchData();
+    }, [setRestaurants]);
 
     const handleDelete = async (e, id) => {
         e.stopPropagation();

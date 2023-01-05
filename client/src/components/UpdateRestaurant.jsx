@@ -2,13 +2,13 @@ import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder';
-import { RestaurantsContext } from '../App';
+
 
 
 const UpdateRestaurant = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { restaurants } = useContext(RestaurantsContext);
+
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [priceRange, setPriceRange] = useState("Price Range");
@@ -22,11 +22,11 @@ const UpdateRestaurant = (props) => {
             setPriceRange(response.data.data.restaurant.price_range);
         };
         fetchData();
-    }, []);
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const updatedRestaurant = await RestaurantFinder.put(`/${id}`, {
+        await RestaurantFinder.put(`/${id}`, {
             name,
             location,
             price_range: priceRange
