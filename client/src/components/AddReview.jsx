@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
@@ -13,10 +13,9 @@ const AddReview = () => {
     const [rating, setRating] = useState('Rating');
     const [reviewText, setReviewText] = useState('');
     
-    const { setSelectedRestaurant } = useContext(RestaurantsContext);
-    
+    const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
 
-    const handleSubmitReview = async (e) => {
+    const handleSubmitReview = useCallback(async (e) => {
         e.preventDefault();
         try {
             const response = await RestaurantFinder.post(`/${id}/addReview`, {
@@ -28,8 +27,7 @@ const AddReview = () => {
         } catch (err) {
             console.log(err);
         }
-    };
-
+    }, [name, reviewText, rating, id]);
     useEffect(() => {
         const fetchData = async () => {
             try {
