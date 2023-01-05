@@ -24,7 +24,7 @@ const RestaurantDetailPage = () => {
         fetchData();
     }, []);
     return (
-        <div>{selectedRestaurant && (
+        <div>Hello {selectedRestaurant && (
             <>
                 <h1 className='text-center display-1'>
                 </h1>
