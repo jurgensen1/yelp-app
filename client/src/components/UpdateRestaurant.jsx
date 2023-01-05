@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder';
