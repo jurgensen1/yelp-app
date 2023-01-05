@@ -13,7 +13,7 @@ const AddReview = () => {
     const [rating, setRating] = useState('Rating');
     const [reviewText, setReviewText] = useState('');
     
-    const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
+    const {setSelectedRestaurant } = useContext(RestaurantsContext);
 
     const handleSubmitReview = useCallback(async (e) => {
         e.preventDefault();

@@ -8,24 +8,24 @@ const RestaurantList = () => {
     const { restaurants, setRestaurants } = useContext(RestaurantsContext);
     let navigate = useNavigate();
 
-    const fetchData = async () => {
-        try {
-            const response = await RestaurantFinder.get("/");
-            console.log(response.data.data.restaurants)
-            setRestaurants(response.data.data.restaurants);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    
 
     useEffect(() => {
-        fetchData();
+        const fetchData = async () => {
+            try {
+                const response = await RestaurantFinder.get("/");
+                console.log(response.data.data.restaurants)
+                setRestaurants(response.data.data.restaurants);
+            } catch (err) {
+                console.log(err);
+            }
+        };
     }, []);
 
     const handleDelete = async (e, id) => {
         e.stopPropagation();
         try {
-            const response = await RestaurantFinder.delete(`/${id}`);
+            await RestaurantFinder.delete(`/${id}`);
             setRestaurants(restaurants.filter(restaurant => {
                 return restaurant.id !== id
             }));
