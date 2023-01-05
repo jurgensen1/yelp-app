@@ -6,7 +6,7 @@ import AddReview from '../components/AddReview';
 import Reviews from '../components/Reviews';
 import StarRating from '../components/StarRating';
 
-const RestaurantDetailPage = (props) => {
+const RestaurantDetailPage = () => {
     const { id } = useParams();
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
 
