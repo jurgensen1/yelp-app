@@ -11,7 +11,7 @@ const RestaurantDetailPage = () => {
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
     console.log("id: " + id);
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async (id) => {
 
             try {
                 const response = await RestaurantFinder.get(`/${id}`);
