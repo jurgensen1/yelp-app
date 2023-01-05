@@ -40,7 +40,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
             [req.params.id]
         );
         const reviews = await db.query(
-            "select * from reviews where restaurant_id = $1",
+            "select * from reviews where restaurant_id = $1;",
              [req.params.id]
         );
         console.log(reviews);
@@ -50,7 +50,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
             data: {
                 restaurant: restaurant.rows[0],
                 reviews: reviews.rows,
-            }
+            },
         });
     } catch (err) {
         console.log(err);
@@ -62,7 +62,7 @@ app.post("/api/v1/restaurants", async (req, res) => {
     console.log(req.body);
     try {
         const results = await db.query(
-            "INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning *",
+            "INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning *;",
             [req.body.name, req.body.location, req.body.price_range]
         );
         console.log(results)
@@ -82,7 +82,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
     // console.log(req.body);
     try {
         const results = await db.query(
-            "UPDATE restaurants SET name = $1, location = $2, price_range = $3 where id = $4 returning *",
+            "UPDATE restaurants SET name = $1, location = $2, price_range = $3 where id = $4 returning *;",
             [req.body.name, req.body.location, req.body.price_range, req.params.id],
         );
         // console.log(results);
@@ -102,7 +102,7 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
     console.log(req.body);
     try {
         const results = await db.query(
-            "DELETE FROM restaurants where id = $1",
+            "DELETE FROM restaurants where id = $1;",
             [req.params.id],
         );
         res.status(204).json({
@@ -120,7 +120,7 @@ app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
     console.log(req.body);
     try {
         const newReview = await db.query(
-            "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) returning *",
+            "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) returning *;",
             [req.params.id, req.body.name, req.body.review, req.body.rating]
         );
         console.log(newReview);
