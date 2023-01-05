@@ -1,7 +1,0 @@
-export PORT="3001"
-export PGUSER="postgres"
-export PGHOST="localhost"
-export PGPASSWORD="password"
-export PGDATABASE="yelp"
-export PGPORT="5432" 
-export NODE_ENV="production"

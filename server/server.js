@@ -1,18 +1,12 @@
 require("dotenv").config();
 const express = require("express");
-const morgan = require("morgan");
 const cors = require("cors");
 const db = require("./db");
+
+const morgan = require("morgan");
+
 const app = express();
 
-// // Morgan is a third party middleware that formats the log output
-// app.use(morgan("dev"));
-
-// // Custome Middelware
-// app.use((req, res, next) => {
-//     console.log("something");
-//     next();
-// });
 app.use(cors());
 app.use(express.json());
 
@@ -38,11 +32,11 @@ res.status(200).json({
 
 // Get a Restaurant
 app.get("/api/v1/restaurants/:id", async (req, res) => {
+    console.log(req.params.id);
 
-    // console.log(req.params.id);
     try {
         const restaurant = await db.query(
-            "select * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id where id = $1;", 
+            "select * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id where id = $1;",
             [req.params.id]
         );
         const reviews = await db.query(
