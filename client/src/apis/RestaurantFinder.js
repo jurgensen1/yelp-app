@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 // const baseURL = "http://localhost:3002/api/v1/restaurants";
-const baseURL = "http://34.219.73.120/api/v1/restaurants";
+const baseURL = "http://mindlark.org/api/v1/restaurants";
 
 // const baseURL = process.env.NODE_ENV === 'production' 
 //     ? "api/v1/restaurants" 
