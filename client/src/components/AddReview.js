@@ -38,7 +38,7 @@ const AddReview = () => {
             }
         };
         fetchData();
-    }, [handleSubmitReview, id, setSelectedRestaurant]);
+    }, [handleSubmitReview]);
 
     return (
         <div className='mb-2'>
