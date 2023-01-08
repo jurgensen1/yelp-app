@@ -1,5 +1,8 @@
 # dependencies
-server/node_modules/.cache
+./server/node_modules/.cache
+./server/node_modules/
+./client/node_modules/
+./client/node_modules/.cache
 server/.pnp
 server/.pnp.js
 
