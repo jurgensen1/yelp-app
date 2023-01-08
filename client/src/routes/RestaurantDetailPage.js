@@ -9,7 +9,11 @@ import StarRating from '../components/StarRating';
 const RestaurantDetailPage = () => {
     const { id } = useParams();
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
+    if (id !== null) {
+        id = 14;
+    }
     console.log("id: " + id);
+
     useEffect(() => {
         const fetchData = async () => {
 
