@@ -38,7 +38,7 @@ const AddReview = () => {
             }
         };
         fetchData();
-    }, [handleSubmitReview]);
+    }, []);
 
     return (
         <div className='mb-2'>
