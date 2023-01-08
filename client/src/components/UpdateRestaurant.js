@@ -6,7 +6,8 @@ import RestaurantFinder from '../apis/RestaurantFinder';
 
 
 const UpdateRestaurant = (props) => {
-    const { id } = useParams();
+    // const { id } = useParams();
+    let id = 14;
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
