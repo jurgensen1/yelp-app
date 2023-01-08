@@ -55,6 +55,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
             },
         });
     } catch (err) {
+        console.log("error1");
         console.log(err);
     }
 });
@@ -82,6 +83,8 @@ app.get("/restaurants/api/v1/restaurants/:id", async (req, res) => {
             },
         });
     } catch (err) {
+        console.log("error2");
+
         console.log(err);
     }
 });
@@ -108,6 +111,8 @@ app.get("/restaurants/:id/api/v1/restaurants/:id", async (req, res) => {
             },
         });
     } catch (err) {
+        console.log("error3");
+
         console.log(err);
     }
 });
