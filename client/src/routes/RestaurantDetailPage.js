@@ -7,7 +7,7 @@ import Reviews from '../components/Reviews';
 import StarRating from '../components/StarRating';
 
 const RestaurantDetailPage = () => {
-    var { id } = useParams();
+    let { id } = useParams();
 
     // let id = 14;
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);

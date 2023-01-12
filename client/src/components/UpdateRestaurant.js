@@ -6,7 +6,7 @@ import RestaurantFinder from '../apis/RestaurantFinder';
 
 
 const UpdateRestaurant = (props) => {
-    const { id } = useParams();
+    let { id } = useParams();
     // let id = 14;
     if (id !== null) {
         id = 14;

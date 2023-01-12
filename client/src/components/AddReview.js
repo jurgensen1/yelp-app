@@ -7,7 +7,7 @@ import { RestaurantsContext } from '../App';
 
 
 const AddReview = () => {
-    const { id } = useParams();
+    let { id } = useParams();
 
     const [name, setName] = useState('');
     const [rating, setRating] = useState('Rating');
