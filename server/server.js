@@ -12,6 +12,7 @@ app.use(express.json());
 
 // Get all restaurants
 app.get("/api/v1/restaurants", async (req, res) => {
+    console.log("Get all restaurants");
     try {
         // const results = await db.query("select * from restaurants");
         const restaurantRatingData = await db.query(
@@ -31,6 +32,7 @@ res.status(200).json({
 });
 // Get a Restaurant at restaurants/
 app.get("/restaurants/api/v1/restaurants/:id", async (req, res) => {
+    console.log("Get a restaurant:");
     console.log("req.params.id: " + req.params.id);
 
     try {
@@ -61,6 +63,7 @@ app.get("/restaurants/api/v1/restaurants/:id", async (req, res) => {
 // Get a Restaurant
 // app.get(/api\/v1\/restaurants/ + "/:id", async (req, res) => {
 app.get("/api/v1/restaurants/:id", async (req, res) => {
+    console.log("Get a restaurant:");
     console.log("req.params.id: " + req.params.id);
 
     try {
