@@ -15,9 +15,9 @@ const AddReview = () => {
     
     const {setSelectedRestaurant } = useContext(RestaurantsContext);
     // let id = 14;
-    // if (id !== null) {
-    //     id = 14;
-    // }
+    if (id == undefined) {
+        id = 14;
+    }
     const handleSubmitReview = useCallback(async (e) => {
         e.preventDefault();
         try {

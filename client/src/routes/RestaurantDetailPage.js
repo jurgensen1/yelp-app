@@ -11,9 +11,9 @@ const RestaurantDetailPage = () => {
 
     // let id = 14;
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
-    // if (id !== null) {
-    //     id = 14;
-    // }
+    if (id == undefined) {
+        id = 14;
+    }
     console.log("id: " + id);
 
     useEffect(() => {
