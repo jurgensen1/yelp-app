@@ -6,8 +6,8 @@ import RestaurantFinder from '../apis/RestaurantFinder';
 
 
 const UpdateRestaurant = (props) => {
-    // const { id } = useParams();
-    let id = 14;
+    const { id } = useParams();
+    // let id = 14;
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
@@ -53,7 +53,7 @@ const UpdateRestaurant = (props) => {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         id="location"
-                        className='form-contol'
+                        className="form-contol"
                         type="text"
                     />
                 </div>

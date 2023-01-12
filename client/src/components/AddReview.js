@@ -7,14 +7,14 @@ import { RestaurantsContext } from '../App';
 
 
 const AddReview = () => {
-    // const { id } = useParams();
+    const { id } = useParams();
 
     const [name, setName] = useState('');
     const [rating, setRating] = useState('Rating');
     const [reviewText, setReviewText] = useState('');
     
     const {setSelectedRestaurant } = useContext(RestaurantsContext);
-    let id = 14;
+    // let id = 14;
     const handleSubmitReview = useCallback(async (e) => {
         e.preventDefault();
         try {
