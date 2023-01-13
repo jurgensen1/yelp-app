@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder';
+import { RestaurantsContext } from '../App';
 
 
 
@@ -11,7 +12,7 @@ const UpdateRestaurant = (props) => {
         id = 14;
     }
     const navigate = useNavigate();
-
+    const { restaurants } = useContext(RestaurantsContext);
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [priceRange, setPriceRange] = useState("Price Range");

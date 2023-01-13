@@ -9,7 +9,7 @@ import axios from "axios";
 // const baseURL = "api/v1/restaurants";
 
 const baseURL = process.env.NODE_ENV === 'production' 
-    ? "api/v1/restaurants" 
+    ? "/api/v1/restaurants" 
     : "https://localhost:3002/api/v1/restaurants";
 
 export default axios.create({

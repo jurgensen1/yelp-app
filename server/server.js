@@ -103,7 +103,7 @@ app.get("/restaurants/:id/api/v1/restaurants/:id", async (req, res) => {
             "select * from reviews where restaurant_id = $1;",
              [req.params.id]
         );
-        console.log(reviews);
+        // console.log(reviews);
         
 
         res.status(200).json({
