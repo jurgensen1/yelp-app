@@ -140,6 +140,7 @@ app.post("/api/v1/restaurants", async (req, res) => {
     }
 });
 
+
 // Update a Restaurant 
 app.put("/api/v1/restaurants/:id", async (req, res) => {
     // console.log(req.body);
@@ -197,8 +198,26 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
         console.log(err);
     }
 });
-
+// Post a New Review
 app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
+    console.log(req.body);
+    try {
+        const newReview = await db.query(
+            "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) returning *;",
+            [req.params.id, req.body.name, req.body.review, req.body.rating]
+        );
+        console.log(newReview);
+        res.status(201).json({
+            status: "success",
+            data: {
+                restaurant: newReview.rows[0],
+            }
+        });
+    } catch (err) {
+        console.log(err);
+    }
+});
+app.post("/restaurants/api/v1/restaurants/:id/addReview", async (req, res) => {
     console.log(req.body);
     try {
         const newReview = await db.query(
