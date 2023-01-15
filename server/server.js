@@ -201,15 +201,19 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
 app.delete("/api/v1/restaurants/:id", async (req, res) => {
     console.log(req.body);
     try {
-        const results = await db.query(
+        const reviews = await db.query(
+            "DELETE FROM reviews where restaurant_id = $1;",
+            [req.params.id],
+        );
+        const restaurants = await db.query(
             "DELETE FROM restaurants where id = $1;",
             [req.params.id],
         );
         res.status(204).json({
             status: "success",
-            data: {
-                restaurant: results.rows[0],
-            }
+            // data: {
+            //     restaurant: results.rows[0],
+            // }
         });
     } catch (err) {
         console.log(err);
