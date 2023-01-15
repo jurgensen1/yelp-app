@@ -9,7 +9,7 @@ import { RestaurantsContext } from '../App';
 const UpdateRestaurant = (props) => {
     let { id } = useParams();
     if (id === undefined) {
-        id = 14;
+        id = 16;
     }
     const navigate = useNavigate();
     const { restaurants } = useContext(RestaurantsContext);

@@ -12,7 +12,7 @@ const RestaurantDetailPage = () => {
     // let id = 14;
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
     if (id == undefined) {
-        id = 14;
+        id = 16;
     }
     console.log("id: " + id);
 
