@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom';
 import RestaurantFinder from '../apis/RestaurantFinder';
 import { RestaurantsContext } from '../App';
 

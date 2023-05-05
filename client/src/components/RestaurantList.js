@@ -28,9 +28,6 @@ const RestaurantList = () => {
         e.stopPropagation();
         try {
             await RestaurantFinder.delete(`/${id}`);
-            setRestaurants(restaurants.filter(restaurant => {
-                return restaurant.id !== id
-            }));
         } catch (err) {
             console.log(err);
         }

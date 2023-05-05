@@ -20,7 +20,7 @@ const AddResaurant = () => {
         } catch (err) {}
     };
     return (
-        <div className="mb-4">
+        <div className="mb-4">34
             <form action=''>
                 <div className="row">
                     <div className="col">
